@@ -1,0 +1,9 @@
+record_id,platform,channel,message_id,displayed_time_eest,state,forwarded_from,text,media_file,availability_at_bundle_time,notes
+R1,Telegram,@road_cam_archive,777,2026-04-11T21:42:00+03:00,observed,,"Ночной взрыв у переправы. Где снято — не знаем. Прислал подписчик.",clip-A.svg,available,"Earliest timestamp in bundle; uploader explicitly says subscriber-supplied."
+R2a,Telegram,@sivernyi_signal,4112,2026-04-12T08:17:00+03:00,pre-edit archive,,"Ночной удар по переправе. Пишут, что снято сегодня под Белгородом.",clip-A.svg,deleted,"Archived snapshot captured before edit; no explicit forward marker."
+R3,Telegram,@front_watch,9281,2026-04-12T08:26:00+03:00,observed,,"Ночной удар по переправе. Пишут, что снято сегодня под Белгородом.",clip-A.svg,available,"Text is identical to R2a; no explicit forward marker."
+R4,Telegram,@news_region,1550,2026-04-12T08:34:00+03:00,observed,@front_watch,"Ночной удар по переправе. Пишут, что снято сегодня под Белгородом.",clip-A.svg,available,"Snapshot explicitly displays forwarded-from @front_watch."
+R5,Telegram,@volnaya_lenta,501,2026-04-12T08:45:00+03:00,observed,@news_region,"ВСУ ударили по переправе под Белгородом этой ночью.",clip-A-crop.svg,available,"Snapshot explicitly displays forwarded-from @news_region; media is cropped/derived representation."
+R2b,Telegram,@sivernyi_signal,4112,2026-04-12T09:05:00+03:00,post-edit archive,,"Уточнение: ролик не сегодняшнего дня. Место не подтверждено. Прислали подписчики.",clip-A.svg,deleted,"Same message ID as R2a after edit. Archive capture at 09:20 preserved edited state."
+R6,Web,mirror.example/item/884,884,2026-04-12T09:12:00+03:00,mirror,@front_watch,"Ночной удар по переправе. Пишут, что снято сегодня под Белгородом.",clip-A.svg,available,"Synthetic web mirror identifies @front_watch as source."
+R7,Telegram,@sivernyi_signal,4112,2026-04-12T10:12:00+03:00,deletion event,,,none,deleted,"Synthetic archive monitor records that message 4112 became unavailable at 10:12."
