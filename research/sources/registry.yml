@@ -1,4 +1,4 @@
-version: 2
+version: 3
 updated: 2026-08-10
 sources:
   - id: bradshaw-med7369
@@ -8,19 +8,37 @@ sources:
     repository: "paulbradshaw/MED7369-Specialist-Investigative-Journalism"
     url: "https://github.com/paulbradshaw/MED7369-Specialist-Investigative-Journalism"
     checked: 2026-08-10
-    audit_status: initial
+    audit_status: partial-reviewed
+    reviewed_files:
+      - README.md
+      - networkanalysis/readme.md
+      - networkanalysis/kumuexercise.md
+      - cleaning/readme.md
+      - python/readme.md
+      - accounts/readme.md
+      - storytelling.md
+    remaining_review:
+      - statistics
+      - selected-python-notebooks
+      - scrapinglaw
+      - selected-network-exercises
+      - accounts-keypoints
+      - licence-and-embedded-materials
     roles:
       - systems-thinking
       - territory-mapping
       - hypothesis-driven-investigation
       - network-analysis
+      - institutional-records
       - apis
       - scraping
       - statistics
       - cognitive-bias
       - text-as-data
       - data-cleaning
+      - entity-resolution
       - project-based-learning
+      - storytelling
     donor_file: "research/donors/paulbradshaw-MED7369.md"
 
   - id: berkeley-protocol
