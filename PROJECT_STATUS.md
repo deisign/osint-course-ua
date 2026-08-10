@@ -18,6 +18,8 @@
 - [x] Initial core templates
 - [x] L03 Telegram Source Tracing — synthetic controlled lab assembled
 - [x] L03 machine/data validation
+- [x] Draft M05 — Preliminary Assessment, Collection, Preservation & Research Logging
+- [x] Draft M06 — Search Strategy, Source Tracing & Provenance Chains
 
 ## L03 status
 
@@ -37,9 +39,31 @@ Still required for `pilot-ready`:
 - [ ] wording/usability fixes from tester;
 - [ ] final instructor grading pass.
 
+## M05/M06 status
+
+Both modules are `DRAFT` and already include:
+
+- learning outcomes;
+- core lesson logic;
+- demonstration using L03;
+- guided exercise design;
+- independent assessment link;
+- checklist;
+- common failure modes;
+- limitations;
+- donor traceability;
+- tool policy.
+
+Before `pilot-ready`:
+
+- [ ] independent human run of L03;
+- [ ] final guided-exercise fixtures;
+- [ ] Mnemonic/WITNESS review for M05;
+- [ ] Bellingcat/source-tracing review for M06;
+- [ ] current optional tool validation.
+
 ## Наступне
 
-- [ ] Draft/pilot-ready M05/M06 around L03
 - [ ] Independent human run of L03
 - [ ] Complete remaining Bradshaw audit: statistics + selected notebooks/exercises + licensing
 - [ ] Audit Berkeley imagery guide (2024)
