@@ -1,14 +1,15 @@
 # M06 — Search Strategy, Source Tracing & Provenance Chains
 
-**Статус:** `DRAFT`  
+**Статус:** `CONTENT-COMPLETE DRAFT`  
 **Phase:** Search & Verification  
 **Competencies:** C04, C05; supports C13  
 **Primary lab:** `labs/L03-telegram-source-tracing/`  
-**Standard:** `standards/osint-investigation-standard-v0.1.md`
+**Standard:** `standards/osint-investigation-standard-v0.1.md`  
+**Platform-specific content checked:** 2026-08-10
 
 ---
 
-# 1. Module purpose
+## 1. Навіщо цей модуль
 
 Модуль навчає відповідати не на питання:
 
@@ -16,420 +17,223 @@
 
 а на питання:
 
-> «Яке найраніше доступне джерело конкретного матеріалу/твердження я можу встановити, як він поширювався, які зв’язки observed, які inferred, і що залишається невідомим?»
+> «Яке найраніше доступне джерело конкретного material/claim я можу встановити, як він поширювався, які relationships observed, які inferred, і що залишається unknown?»
 
-Source tracing — це не гонка за найстарішим timestamp. Це reconstruction provenance chain.
+Source tracing — це не гонка за найстарішим timestamp. Це **reconstruction provenance chain** із чіткими межами доказової сили.
+
+Після модуля студент має стати повільнішим у категоричних attribution claims, але швидшим у структурованому описі uncertainty.
 
 ---
 
-# 2. Learning outcomes
+## 2. Learning outcomes
 
 Після модуля студент здатний:
 
-1. відрізняти creator, uploader, publisher, republisher і aggregator;
-2. використовувати багатомовні search variants та archives для source tracing;
-3. знаходити earliest known available source;
-4. не називати earliest known source доведеним original creator;
-5. розрізняти explicit forward/repost metadata і inferred copying;
-6. виявляти circular reporting;
-7. враховувати edit/deletion history;
-8. будувати provenance timeline/edge list;
-9. оцінювати source-tracing claim через SOURCE / ITEM / CONTENT;
-10. формулювати bounded conclusion з confidence і limitations.
+1. відрізняти creator, uploader, publisher, republisher і source-for-later-publisher;
+2. уточнювати `source of what?` для publication, media, caption і claim;
+3. будувати відтворювану search strategy;
+4. знаходити earliest known available source без перетворення його на creator;
+5. розрізняти explicit provenance і inferred copying;
+6. будувати provenance graph із `observed / inferred / unknown` edges;
+7. виявляти circular reporting і рахувати independent origins;
+8. розділяти media lineage та claim lineage;
+9. працювати з edits/deletions/archive captures як versioned observations;
+10. коректно трактувати hash, watermark, crop/transcode та інші media clues;
+11. переглядати стару модель при появі нового earlier evidence;
+12. формулювати bounded conclusion з confidence, alternatives і limitations.
 
 Target level: C04 → L3; C05 reinforcement.
 
 ---
 
-# 3. Five identities that students commonly collapse
+# 3. Student path
 
-Для одного media item можуть існувати різні ролі:
+## Core lessons
 
-## Creator
+1. [`01-why-provenance-matters.md`](01-why-provenance-matters.md) — знахідка vs походження; publication/media/claim objects.
+2. [`02-source-roles.md`](02-source-roles.md) — creator/uploader/publisher/republisher roles.
+3. [`03-propagation-models.md`](03-propagation-models.md) — observed/inferred/unknown edges, common upstream.
+4. [`04-search-strategy.md`](04-search-strategy.md) — fingerprints, search ladder, search log, stop conditions.
+5. [`05-telegram-specifics.md`](05-telegram-specifics.md) — Telegram forward/copy/edit/delete provenance signals and gaps.
+6. [`06-web-and-archives.md`](06-web-and-archives.md) — archive captures, mirrors, web version history.
+7. [`07-media-provenance.md`](07-media-provenance.md) — byte identity, derived copies, media vs claim timelines.
+8. [`08-circular-reporting.md`](08-circular-reporting.md) — publication count vs independent evidence origins.
+9. [`09-confidence-and-limitations.md`](09-confidence-and-limitations.md) — bounded conclusions and calibrated confidence.
 
-Особа/система, що фактично створила content/file.
+## Examples
 
-## Uploader
+[`examples/casebook.md`](examples/casebook.md) — 12 synthetic micro-cases.
 
-Хто завантажив конкретну copy на platform.
+For every mini-case use four questions:
 
-## Publisher
+1. What is **observed**?
+2. What is **inferred**?
+3. What remains **unknown**?
+4. What **overclaim** must be avoided?
 
-Хто опублікував material для audience.
+## Guided practice
 
-## Source for a later publisher
+[`guided-exercise/task.md`](guided-exercise/task.md)
 
-Звідки later outlet реально отримав material.
+Two-phase exercise. Student first builds a plausible provenance graph, then receives an earlier archive record and must revise the model rather than defend the original hypothesis.
 
-## Earliest known available publisher
+Instructor solution:
 
-Найраніша publication, яку investigator зміг встановити.
+`guided-exercise/solution.md`
 
-Ці ролі можуть збігатися, але це MUST бути встановлено evidence, а не припущено.
+## Knowledge check
 
----
+- [`knowledge-check/questions.md`](knowledge-check/questions.md)
+- `knowledge-check/answer-key.md` — instructor-only before completion.
 
-# 4. Source tracing workflow
+20 questions test concepts independently of tool proficiency.
 
-```text
-claim / media received
-→ identify distinctive features
-→ search current web/platform
-→ search language/name variants
-→ locate earlier copies
-→ compare text/media/context
-→ inspect explicit forward/repost metadata
-→ inspect archives/edit history
-→ build timeline
-→ build observed/inferred propagation edges
-→ test alternative source paths
-→ state earliest known source + limitations
-```
+## Field aids
 
----
+- [`reference-sheet.md`](reference-sheet.md) — concise operational checklist;
+- [`common-errors.md`](common-errors.md) — 20 common failure modes + remediation.
 
-# 5. Search strategy
-
-Студент повинен планувати search variants.
-
-For text:
-
-- exact phrase;
-- distinctive fragment;
-- spelling variants;
-- quoted/unquoted;
-- Ukrainian/Russian forms;
-- transliteration;
-- typo variants;
-- names before/after rename.
-
-For media:
-
-- reverse image / visual search;
-- keyframe search;
-- cropped variants;
-- mirrored variants;
-- filenames/metadata when useful;
-- context text around reposts.
-
-For accounts:
-
-- username history where observable;
-- display-name variants;
-- mirrors;
-- syndication/aggregation patterns.
-
----
-
-# 6. Time is evidence, not authorship
-
-If A appears at 08:00 and B at 09:00, the evidence supports:
-
-> A is earlier than B in the observed dataset.
-
-It does NOT automatically support:
-
-> B copied from A.
-
-Possible alternatives:
-
-- both copied from unseen C;
-- B had item before publication;
-- timestamps reflect different timezones/platform displays;
-- archive did not capture an earlier source;
-- A reposted material created offline.
-
-Therefore direct propagation edges need additional basis.
-
----
-
-# 7. Observed vs inferred propagation
-
-## OBSERVED edge
-
-Explicit evidence indicates relationship.
-
-Examples:
-
-- forwarded-from metadata;
-- syndication field;
-- direct source citation;
-- embedded original post;
-- explicit link to source.
-
-## INFERRED edge
-
-Relationship is analytically plausible but not directly encoded.
-
-Possible indicators:
-
-- later timestamp;
-- identical unusual text;
-- same media;
-- same typo;
-- same crop;
-- same ordering of multiple attachments;
-- unique caption change repeated downstream.
-
-Inference MUST state confidence and alternative paths.
-
----
-
-# 8. Media equality and similarity
-
-## Byte-identical
-
-Same cryptographic hash of compared files.
-
-Supports:
-
-> these collected files contain identical bytes.
-
-Does not prove:
-
-- creator;
-- transmission direction;
-- event truth;
-- first publication.
-
-## Visually same but byte-different
-
-Possible causes:
-
-- platform recompression;
-- crop;
-- resize;
-- screenshot;
-- metadata change;
-- transcoding;
-- edit/manipulation.
-
-Source tracing may require both technical and contextual comparison.
-
----
-
-# 9. Text fingerprinting
-
-Repeated distinctive wording can help reconstruct propagation.
-
-Strong clues:
-
-- unusual phrase;
-- same rare typo;
-- same punctuation error;
-- same mistranslation;
-- same specific order of details.
-
-But repeated text can still derive from shared upstream source.
-
-Correct conclusion may be:
-
-> R3 likely copied R2 or a common source carrying the identical wording.
-
-not:
-
-> R3 definitely copied R2.
-
----
-
-# 10. Circular reporting
-
-Five publications do not equal five independent sources if all derive from one origin.
-
-Student MUST distinguish:
-
-```text
-number of publications
-vs
-number of independent evidence origins
-```
-
-A propagation graph can reveal apparent corroboration that is actually duplication.
-
----
-
-# 11. Edits and deletions
-
-## Edit
-
-A single message ID may have multiple observed states.
-
-Material edit MAY change:
-
-- factual claim;
-- source attribution;
-- location/date;
-- certainty;
-- accusation;
-- correction.
-
-Both states SHOULD be preserved if material to the analysis.
-
-## Deletion
-
-Deletion:
-
-- makes live verification harder;
-- increases importance of preserved snapshots;
-- does not prove deception;
-- does not invalidate a properly documented earlier capture.
-
----
-
-# 12. SOURCE / ITEM / CONTENT model for source tracing
-
-## SOURCE
-
-- Who published?
-- What relationship do they claim to the media?
-- Do they say “our footage”, “subscriber sent”, “repost”, etc.?
-- Is source identity stable?
-
-## ITEM
-
-- Same exact file or derived copy?
-- Earliest known version?
-- Metadata/transformations?
-- Edit/recompression/crop history?
-
-## CONTENT
-
-- Does the media itself support contextual claims?
-- Does repeated caption provide actual corroboration?
-- Do external facts support location/date?
-
----
-
-# 13. Demonstration case — L03
-
-Use synthetic chain:
-
-```text
-R1 @road_cam_archive
-R2a @sivernyi_signal
-R3 @front_watch
-R4 @news_region
-R5 @volnaya_lenta
-R2b edited @sivernyi_signal
-R6 web mirror
-R7 deletion event
-```
-
-Key teaching moments:
-
-1. R1 is earlier than R2a.
-2. R1 says subscriber-supplied → creator unknown.
-3. R2a introduces a new context claim.
-4. R3 duplicates R2a exactly, but no explicit forward → inferred.
-5. R4/R5 have explicit forward paths.
-6. R2b materially retracts/qualifies context.
-7. deletion does not erase archived states.
-
----
-
-# 14. Guided exercise
-
-Before full L03, give students a four-record mini-chain:
-
-- A — earliest timestamp, no source claim;
-- B — later identical media, explicit “forwarded from A”;
-- C — earlier archive than A discovered later;
-- D — independent-looking article actually links B.
-
-Ask students to revise their graph after C appears.
-
-Purpose: demonstrate that provenance chain is provisional and evidence-dependent.
-
----
-
-# 15. Independent assessment
-
-Primary:
+## Independent assessment
 
 `labs/L03-telegram-source-tracing/`
 
-Student submits:
+Student independently reconstructs a synthetic Telegram provenance chain including:
 
-- object register;
-- timeline;
-- propagation edges;
-- hashes;
-- verification sheet;
-- analytical conclusion.
-
----
-
-# 16. Checklist
-
-- [ ] earliest known source identified with timestamp/reference;
-- [ ] original creator claim separated;
-- [ ] all material edits included;
-- [ ] deleted content relies on preserved evidence, not memory;
-- [ ] observed/inferred edges separated;
-- [ ] circular sources collapsed conceptually;
-- [ ] media equality/similarity correctly described;
-- [ ] alternative source paths considered;
-- [ ] SOURCE / ITEM / CONTENT assessed;
-- [ ] confidence given per claim;
-- [ ] limitations explicit.
+- earlier publication;
+- manual copy;
+- explicit forwards;
+- material edit;
+- deletion event;
+- derived media;
+- web mirror.
 
 ---
 
-# 17. Common failure modes
+# 4. Core reasoning model
 
-1. Oldest timestamp = creator.
-2. Same hash = A sent file to B.
-3. Same caption = explicit repost.
-4. Ten reposts = ten confirmations.
-5. Deleted post = confession.
-6. Edited post overwritten instead of versioned.
-7. Archive timestamp confused with publication timestamp.
-8. Earliest source found in one search engine treated as absolute first publication.
-9. Viral caption treated as evidence for location/date.
-10. `verified` used without specified claim.
-
----
-
-# 18. What this method does NOT establish
-
-Source tracing alone does not establish:
-
-- physical creator;
-- filming location;
-- filming time;
-- truth of depicted event;
-- responsibility for event;
-- intent of publisher;
-- whether unseen offline/private source exists.
+```text
+received claim/media
+→ define object: publication / media / claim
+→ inventory fingerprints
+→ search current + earlier states
+→ preserve relevant objects
+→ build timeline
+→ classify propagation edges
+→ separate media and claim provenance
+→ collapse circular sources
+→ test common-upstream alternatives
+→ revise model when new evidence appears
+→ state earliest-known + confidence + limitations
+```
 
 ---
 
-# 19. Sources and donor traceability
+# 5. The five identities students must not collapse
 
-Methodological core:
+For one item, different entities may be:
 
-- OSINT Investigation Standard v0.1;
-- Berkeley Protocol verification/provenance principles;
-- later Bellingcat/archive/platform-specific donor review pending.
+- **Creator** — produced primary content;
+- **Uploader** — uploaded a specific copy;
+- **Publisher** — presented material to an audience and added context;
+- **Source for later publisher** — actual upstream relationship for a downstream publication;
+- **Earliest known available publisher** — earliest publication established within the current research scope.
 
-L03 is synthetic and intentionally does not depend on live Telegram behaviour or third-party search services.
-
----
-
-# 20. Tool policy
-
-Search/reverse-search/archive tools are replaceable.
-
-A future live variant may specify current tools, but controlled core assessment must remain solvable if one service changes or disappears.
+These roles may coincide, but coincidence must be supported rather than assumed.
 
 ---
 
-# 21. Status to become pilot-ready
+# 6. Critical professional rules
 
-Still required:
+1. Earliest timestamp ≠ creator.
+2. Same SHA-256 ≠ direct transmission.
+3. Different hash ≠ unrelated media.
+4. Same wording ≠ observed copy relationship.
+5. No forward marker ≠ independent origin.
+6. Deleted ≠ deceptive/guilty.
+7. Archive capture time ≠ publication time.
+8. Five publications ≠ five independent confirmations.
+9. Watermark ≠ authorship.
+10. `Verified` must name the specific verified claim.
+11. New evidence must be allowed to lower confidence in old conclusions.
+12. `Unknown / insufficient` is a valid professional result.
 
-- independent human run of L03;
-- final guided mini-exercise fixture;
-- current search/archive tool validation for optional live demonstration;
-- Bellingcat/source-tracing donor review;
-- split final lesson material if needed for learning platform.
+---
+
+# 7. Assessment philosophy
+
+Technical complexity does not compensate for overclaiming.
+
+A student who uses CSV/Markdown and correctly preserves uncertainty should score higher than a student who builds sophisticated graphs/scripts but calls an earliest uploader the creator.
+
+Critical failures include systematic collapse of:
+
+- uploader → creator;
+- chronology → direction;
+- repetition → corroboration;
+- deletion → motive;
+- search scope → universal absence.
+
+---
+
+# 8. Sources and freshness
+
+See [`sources.md`](sources.md).
+
+Current primary platform/service documentation checked on 2026-08-10:
+
+- Telegram official FAQ/API/TDLib;
+- Internet Archive / Wayback Machine official Help Center.
+
+Practitioner donor:
+
+- Bellingcat social-media verification guidance.
+
+Stable abstractions must remain teachable even if a particular search/archive UI changes.
+
+---
+
+# 9. Instructor material
+
+[`instructor-guide.md`](instructor-guide.md)
+
+Includes:
+
+- recommended learning sequence;
+- provisional timing;
+- pre/post diagnostic;
+- guided exercise facilitation;
+- L03 debrief;
+- critical misconceptions;
+- grading philosophy;
+- safety rules;
+- platform freshness check;
+- pilot protocol.
+
+---
+
+# 10. Status
+
+M06 is now **content-complete as a first authored draft**, not merely a curriculum skeleton.
+
+Completed:
+
+- [x] 9 substantive lesson chapters;
+- [x] 12-case micro-casebook;
+- [x] staged guided exercise + solution;
+- [x] 20-question knowledge check + answer key;
+- [x] reference sheet;
+- [x] common-errors/remediation guide;
+- [x] source dossier/freshness policy;
+- [x] instructor guide;
+- [x] independent synthetic lab L03;
+- [x] current primary Telegram/Wayback documentation checked.
+
+Still required before `PILOT-READY`:
+
+- [ ] independent human run without oral hints;
+- [ ] measured completion time;
+- [ ] wording/usability fixes from tester;
+- [ ] final reviewer grading pass;
+- [ ] optional current live-demo tool set validated.
+
+This module is the **golden-module candidate** for defining the quality bar of the rest of the course.
