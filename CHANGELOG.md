@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-08-10 — L01 + L12 + mini-pilot v0.1
+
+- створено controlled synthetic lab `L01 Territory Map`;
+- L01 містить task, synthetic scenario, 12 seed records, rubric, instructor solution, validation record і submission template;
+- L01 формалізує `given / inferred / unknown`, source ecosystem, collection requirements, gaps, competing explanations і harm note;
+- створено controlled synthetic lab `L12 Wrong Attribution`;
+- L12 містить 2 synthetic candidate profiles, 15 observations, 10 claims, rubric, instructor solution, validation record і submission templates;
+- L12 формалізує attribution ladder: `account control → identity → affiliation → physical presence → specific action / responsibility`;
+- dataset L12 навмисно не містить прихованої позитивної атрибуції: P-A і P-B залишаються недоведеними кандидатами;
+- зафіксовано правило `unknown location ≠ evidence of presence` і `upload time ≠ capture time`;
+- внутрішні CSV checks пройдено: unique IDs / required columns / intended epistemic-status distributions → OK;
+- створено `pilot/mini-pilot-v0.1.md` для послідовності L01 → L03 → L12;
+- mini-pilot protocol вимірює completion time, clarification questions, rubric score, critical fails, confidence calibration і reviewer disagreement;
+- усі три лабораторні залишаються `DRAFT / internally testable` до незалежного людського проходу.
+
 ## 2026-08-10 — M05/M06 draft modules
 
 - додано `modules/M05-collection-preservation/README.md`;
