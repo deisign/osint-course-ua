@@ -1,2 +1,2 @@
-record_id,platform,publisher,time,forwarded_from,text,media_id,notes
-E,Archive,mirror.example/archive/991,2026-06-03T07:51:00+03:00,,"Колона рухається через міст. Відео від підписника.",V1,"Earlier archived publication discovered after phase 1. Publisher identity is a mirror account; upstream source not identified."
+record_id,platform,publisher,publication_time,archive_capture_time,time_basis,forwarded_from,text,media_id,notes
+E,Web mirror,mirror.example/item/991,2026-06-03T07:51:00+03:00,2026-06-03T08:02:00+03:00,"page timestamp + archive capture",,"Колона рухається через міст. Відео від підписника.",V1,"Earlier mirror page discovered through archive after phase 1. Archive proves this page state existed by 08:02; the page itself claims publication at 07:51. Upstream source not identified."
