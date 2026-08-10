@@ -1,4 +1,4 @@
-version: 1
+version: 2
 updated: 2026-08-10
 sources:
   - id: bradshaw-med7369
@@ -27,15 +27,81 @@ sources:
     type: standard
     title: "Berkeley Protocol on Digital Open Source Investigations"
     organisations:
-      - "United Nations Human Rights Office"
+      - "United Nations Office of the High Commissioner for Human Rights"
       - "Human Rights Center, UC Berkeley School of Law"
-    audit_status: queued
+    url: "https://humanrights.berkeley.edu/publications/berkeley-protocol-on-digital-open-source-investigations/"
+    pdf: "https://humanrights.berkeley.edu/wp-content/uploads/archive/2024/02/Berkeley-Protocol.pdf"
+    checked: 2026-08-10
+    audit_status: core-reviewed
+    audit_scope:
+      - principles
+      - security
+      - preparation
+      - investigation-process
+      - collection
+      - preservation
+      - verification
+      - investigative-analysis
+      - annex-templates
+    review_required:
+      - legal-framework
+      - privacy-data-protection
+      - ukrainian-criminal-procedure
     roles:
       - digital-open-source-investigations
+      - professional-principles
+      - methodological-principles
+      - ethical-principles
+      - threat-risk-assessment
+      - digital-landscape-assessment
+      - collection
       - preservation
       - verification
       - documentation
-      - ethics
+      - investigative-analysis
+      - reporting
+    donor_file: "research/donors/berkeley-protocol.md"
+
+  - id: berkeley-imagery-guide-2024
+    type: protocol-guide
+    title: "Evaluating Digital Open Source Imagery: A Guide for Judges and Fact-finders"
+    organisations:
+      - "WITNESS"
+      - "Open Society Justice Initiative"
+      - "Swansea University"
+      - "Queen Mary University of London"
+      - "Mnemonic"
+      - "Human Rights Center, UC Berkeley"
+      - "Hertie School"
+      - "Bonavero Institute of Human Rights, University of Oxford"
+    url: "https://humanrights.berkeley.edu/publications/evaluating-digital-open-source-imagery-a-guide-for-judges-and-fact-finders/"
+    publication_date: 2024-05-24
+    audit_status: queued
+    roles:
+      - imagery-evidence
+      - authenticity
+      - metadata
+      - source-analysis
+      - geolocation
+      - chronolocation
+      - judicial-evaluation
+
+  - id: murad-code-open-source-guide-2025
+    type: protocol-guide
+    title: "Open-Source Practitioner’s Guide to the Murad Code"
+    organisations:
+      - "Human Rights Center, UC Berkeley"
+      - "Institute for International Criminal Investigations"
+    url: "https://humanrights.berkeley.edu/publications/open-source-practitioners-guide-to-the-murad-code/"
+    publication_date: 2025-12-01
+    audit_status: queued
+    roles:
+      - conflict-related-sexual-violence
+      - survivor-centred-practice
+      - safety
+      - dignity
+      - ethical-open-source-research
+      - harm-prevention
 
   - id: witness
     type: methodology-library
