@@ -4,7 +4,7 @@
 
 ### Earliest known publication
 
-A at 08:12.
+A at 08:12 based on the platform timestamp in the phase-1 dataset.
 
 ### Creator
 
@@ -45,24 +45,37 @@ A cautious student may rate `A→B` low/medium. Both can pass if reasoning is ex
 
 # Phase 2 expected reasoning
 
-## New earliest known publication
+## New earlier web object discovered through archive
 
-E at 07:51.
+E is a web-mirror page whose own page timestamp claims **07:51**.
 
-The label `earliest known` must move from A to E.
+The archive capture establishes that this state of E existed **by 08:02**.
+
+These are two separate time claims and must not be collapsed.
+
+Because the archive proves E existed by 08:02, E is now the earliest **documented available object in the exercise** before A at 08:12.
+
+A careful student may phrase this as:
+
+> «E is documented by archive capture as existing by 08:02; the page itself claims publication at 07:51.»
+
+They should not say:
+
+> «The archive proves E was published at 07:51.»
 
 ## What must change
 
 A student must not simply prepend E to the graph while leaving `A→B` unchanged.
 
-The new E demonstrates that the distinctive wording existed before both A and B.
+The newly discovered E shows that the distinctive wording was publicly present no later than the 08:02 archive capture, before A and B.
 
 Therefore:
 
 - chronology no longer makes A the strongest obvious upstream candidate for B;
 - `A→B` confidence should decrease;
 - common upstream / E-related path becomes stronger;
-- direction E→A or E→B is still **not observed**, because E is a mirror and its own upstream is unknown.
+- direction E→A or E→B is still **not observed**, because E’s upstream provenance is unknown;
+- the page’s claimed 07:51 publication time remains distinct from the archive’s 08:02 capture proof.
 
 ## Correct graph logic
 
@@ -74,10 +87,10 @@ Observed edges remain:
 For early records:
 
 ```text
-E earliest-known publication
+E — documented available by 08:02
  ?
- ├── A
- └── B
+ ├── A 08:12
+ └── B 08:19
       ↓ observed forward
       C
       ↓ observed citation/embed
@@ -88,7 +101,7 @@ The question marks are analytically meaningful.
 
 ## Strong phase-2 conclusion
 
-> E is now the earliest known available publication at 07:51, but because E is itself a mirror with unknown upstream provenance, creator remains unknown. The discovery weakens the phase-1 inference that B copied A: both may derive from E or another common source. C→B and D→C remain directly observed provenance relationships. No evidence establishes a complete chain from creator to E/A/B.
+> E is the earliest newly documented available object in the exercise: an archive capture proves the mirror page existed by 08:02, while the page itself claims a 07:51 publication time. E’s upstream provenance remains unknown, so creator remains unknown. The discovery weakens the phase-1 inference that B copied A: both may derive from E or another common source. C→B and D→C remain directly observed provenance relationships. No evidence establishes a complete chain from creator to E/A/B.
 
 ---
 
@@ -100,9 +113,10 @@ It is whether the student:
 
 1. preserves the original phase-1 reasoning;
 2. notices that new evidence changes old confidence;
-3. distinguishes earliest known publication from creator;
-4. leaves unsupported edges unknown;
-5. does not protect the initial hypothesis after it becomes weaker.
+3. distinguishes earliest documented availability from creator;
+4. distinguishes page publication claim from archive capture time;
+5. leaves unsupported edges unknown;
+6. does not protect the initial hypothesis after it becomes weaker.
 
 ---
 
@@ -111,6 +125,10 @@ It is whether the student:
 A critical fail occurs if after phase 2 the student writes any equivalent of:
 
 > «E is the original creator/source because it is earliest.»
+
+or:
+
+> «The archive proves E was published at 07:51.»
 
 or keeps:
 
