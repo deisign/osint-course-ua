@@ -1,0 +1,13 @@
+seed_id,class,name_or_system,known_role,known_artifact,certainty,notes
+S01,regional-government,Government of Northern Krai,sets regional policy and funding,"decrees; budget documents; press releases",given,"Synthetic entity"
+S02,municipal-government,Municipal administrations,may add local incentives,"local resolutions; budget amendments; news posts",given,"14 districts + 3 cities; individual implementations unknown"
+S03,recruitment-system,Contract consultation points,public-facing recruitment interface,"hours; addresses; event notices; campaign materials",given,"Institutional owner not specified in brief"
+S04,employment-system,Regional employment centres,host consultation activity,"event schedules; vacancies; partnership notices",given,"Possible overlap with social policy system"
+S05,veterans-organisation,Northern Veterans Association,appears in campaign events,"event reports; photos; statements",given,"Role beyond public participation unknown"
+S06,education-system,Regional colleges,some hosted career meetings,"event reports; calendars; photos",given,"Participation is not evidence of recruitment outcomes"
+S07,procurement-system,Regional procurement portal,records some public purchases,"tenders; contracts; suppliers; amounts",inferred,"Not all relevant spending necessarily appears under obvious labels"
+S08,private-sector,Advertising contractors,may place campaign advertising,"contracts; creative assets; invoices where public",given,"Specific contractors not provided"
+S09,media-system,Municipal and regional media,distribute campaign messaging,"articles; interviews; sponsored materials",given,"Editorial and paid content must be distinguished"
+S10,measurement-system,Monthly plan-performance reports,report recruitment results,"tables; percentages; press releases",given,"Counting methodology unknown"
+S11,budget-system,Regional treasury / budget reporting,publishes execution data,"appropriations; execution reports; amendments",inferred,"Exact programme codes unknown"
+S12,accountability,Regional audit or control body,may review programme expenditure,"audit reports; findings; annual plans",inferred,"Whether programme is reviewed is unknown"
