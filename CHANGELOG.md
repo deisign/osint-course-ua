@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-08-10 — M05/M06 draft modules
+
+- додано `modules/M05-collection-preservation/README.md`;
+- додано `modules/M06-source-tracing/README.md`;
+- M05 формалізує preliminary assessment, collection, preservation, hash limits, reference/working copies і transformation logging;
+- M06 формалізує creator/uploader/publisher distinction, earliest-known-source logic, observed vs inferred propagation, circular reporting, edit/deletion history і provenance chains;
+- обидва модулі використовують L03 як demonstration/assessment case;
+- статус обох модулів: `DRAFT`; independent human run і donor/tool validation потрібні до `pilot-ready`.
+
 ## 2026-08-10 — methodology core + first working lab
 
 - додано `docs/02-competency-map.md`;
