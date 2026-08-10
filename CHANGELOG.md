@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-08-10 — M06 golden-module content build
+
+- M06 promoted from curriculum skeleton/draft outline to `CONTENT-COMPLETE DRAFT` and designated golden-module candidate;
+- added 9 substantive authored lessons:
+  - why provenance matters;
+  - source roles;
+  - propagation models;
+  - search strategy;
+  - Telegram-specific provenance;
+  - web/archives;
+  - media provenance;
+  - circular reporting;
+  - confidence & limitations;
+- added 12-case synthetic micro-casebook;
+- added staged guided exercise with phase-1 model, later earlier-source discovery, and instructor solution;
+- added 20-question knowledge check + answer key;
+- added operational reference sheet;
+- added 20 common errors with remediation guidance;
+- added source dossier and freshness policy;
+- added full instructor guide with learning sequence, provisional timing, diagnostic, grading philosophy, debrief and pilot protocol;
+- official Telegram FAQ/API/TDLib checked 2026-08-10 for forward/edit/copy/delete provenance-relevant behaviour;
+- official Internet Archive / Wayback Machine help checked 2026-08-10 for capture/save/coverage limitations;
+- Bellingcat verification guide included as practitioner donor only;
+- M06 README rebuilt as student/instructor navigation entrypoint;
+- M06 still requires independent human run before `PILOT-READY`.
+
 ## 2026-08-10 — L01 + L12 + mini-pilot v0.1
 
 - створено controlled synthetic lab `L01 Territory Map`;
@@ -20,9 +46,8 @@
 - додано `modules/M05-collection-preservation/README.md`;
 - додано `modules/M06-source-tracing/README.md`;
 - M05 формалізує preliminary assessment, collection, preservation, hash limits, reference/working copies і transformation logging;
-- M06 формалізує creator/uploader/publisher distinction, earliest-known-source logic, observed vs inferred propagation, circular reporting, edit/deletion history і provenance chains;
-- обидва модулі використовують L03 як demonstration/assessment case;
-- статус обох модулів: `DRAFT`; independent human run і donor/tool validation потрібні до `pilot-ready`.
+- M06 первинно формалізував creator/uploader/publisher distinction, earliest-known-source logic, observed vs inferred propagation, circular reporting, edit/deletion history і provenance chains;
+- обидва модулі використовують L03 як demonstration/assessment case.
 
 ## 2026-08-10 — methodology core + first working lab
 
