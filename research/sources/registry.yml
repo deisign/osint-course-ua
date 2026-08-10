@@ -1,0 +1,75 @@
+version: 1
+updated: 2026-08-10
+sources:
+  - id: bradshaw-med7369
+    type: course-repository
+    author: Paul Bradshaw
+    title: "MED7369 Specialist Journalism, Investigations and Coding"
+    repository: "paulbradshaw/MED7369-Specialist-Investigative-Journalism"
+    url: "https://github.com/paulbradshaw/MED7369-Specialist-Investigative-Journalism"
+    checked: 2026-08-10
+    audit_status: initial
+    roles:
+      - systems-thinking
+      - territory-mapping
+      - hypothesis-driven-investigation
+      - network-analysis
+      - apis
+      - scraping
+      - statistics
+      - cognitive-bias
+      - text-as-data
+      - data-cleaning
+      - project-based-learning
+    donor_file: "research/donors/paulbradshaw-MED7369.md"
+
+  - id: berkeley-protocol
+    type: standard
+    title: "Berkeley Protocol on Digital Open Source Investigations"
+    organisations:
+      - "United Nations Human Rights Office"
+      - "Human Rights Center, UC Berkeley School of Law"
+    audit_status: queued
+    roles:
+      - digital-open-source-investigations
+      - preservation
+      - verification
+      - documentation
+      - ethics
+
+  - id: witness
+    type: methodology-library
+    title: "WITNESS resources"
+    audit_status: queued
+    roles:
+      - video-as-evidence
+      - verification
+      - ethical-documentation
+
+  - id: mnemonic
+    type: methodology
+    title: "Mnemonic / Ukrainian Archive"
+    audit_status: queued
+    roles:
+      - digital-preservation
+      - archiving
+      - accountability
+
+  - id: truth-hounds
+    type: methodology-practice
+    title: "Truth Hounds"
+    audit_status: queued
+    roles:
+      - ukraine
+      - international-crimes
+      - documentation
+
+  - id: bellingcat
+    type: methodology-practice
+    title: "Bellingcat methodologies and investigations"
+    audit_status: queued
+    roles:
+      - verification
+      - geolocation
+      - chronolocation
+      - open-source-investigations
