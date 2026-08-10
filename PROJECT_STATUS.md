@@ -1,7 +1,7 @@
 # Project status
 
 **Дата:** 2026-08-10  
-**Стадія:** pre-alpha / curriculum design + three-lab mini-pilot preparation
+**Стадія:** pre-alpha / first golden-module implementation + three-lab mini-pilot preparation
 
 ## Готово
 
@@ -17,7 +17,7 @@
 - [x] Partial file-level audit Paul Bradshaw / MED7369
 - [x] Initial core templates
 - [x] Draft M05 — Preliminary Assessment, Collection, Preservation & Research Logging
-- [x] Draft M06 — Search Strategy, Source Tracing & Provenance Chains
+- [x] **M06 golden-module candidate — Content-Complete Draft**
 - [x] L01 Territory Map — synthetic controlled lab assembled
 - [x] L01 structural/internal validation
 - [x] L03 Telegram Source Tracing — synthetic controlled lab assembled
@@ -26,6 +26,52 @@
 - [x] L12 structural/bias validation
 - [x] Submission templates for L01 and L12
 - [x] Mini-pilot v0.1 protocol for L01 → L03 → L12
+
+## M06 — Golden-module candidate
+
+**Статус:** `CONTENT-COMPLETE DRAFT`
+
+M06 тепер не є curriculum skeleton. Він містить повний authored learning path:
+
+### Core lessons
+
+1. `01-why-provenance-matters.md`
+2. `02-source-roles.md`
+3. `03-propagation-models.md`
+4. `04-search-strategy.md`
+5. `05-telegram-specifics.md`
+6. `06-web-and-archives.md`
+7. `07-media-provenance.md`
+8. `08-circular-reporting.md`
+9. `09-confidence-and-limitations.md`
+
+### Practice & assessment
+
+- 12-case micro-casebook;
+- two-phase guided exercise with model revision;
+- guided instructor solution;
+- 20-question knowledge check + answer key;
+- reference sheet;
+- 20-error remediation guide;
+- source dossier + freshness policy;
+- instructor guide;
+- independent controlled lab L03.
+
+### Current source validation
+
+Checked 2026-08-10:
+
+- official Telegram FAQ/API/TDLib for forward/edit/copy/delete provenance behaviour;
+- official Internet Archive / Wayback Machine help for archive/capture limitations;
+- Bellingcat used only as practitioner donor, not platform documentation.
+
+Still required before `PILOT-READY`:
+
+- [ ] independent human run without oral hints;
+- [ ] measured completion time per component;
+- [ ] usability/wording fixes;
+- [ ] final reviewer grading pass;
+- [ ] optional current live-demo tools validated.
 
 ## Lab status
 
@@ -58,7 +104,8 @@ Checks passed:
 - CSV structure and chronology;
 - explicit-forward logic;
 - edit/deletion states;
-- expected SHA-256 values for synthetic media.
+- expected SHA-256 values for synthetic media;
+- now embedded in full M06 learning path.
 
 Still required for `pilot-ready`:
 
@@ -88,15 +135,13 @@ Still required for `pilot-ready`:
 - [ ] ambiguity review of claims;
 - [ ] grading calibration.
 
-## M05/M06 status
+## M05 status
 
-Both modules are `DRAFT` and already include:
+M05 remains `DRAFT` and includes:
 
 - learning outcomes;
 - core lesson logic;
 - demonstration using L03;
-- guided exercise design;
-- independent assessment link;
 - checklist;
 - common failure modes;
 - limitations;
@@ -105,11 +150,10 @@ Both modules are `DRAFT` and already include:
 
 Before `pilot-ready`:
 
-- [ ] independent human run of L03;
-- [ ] final guided-exercise fixtures;
-- [ ] Mnemonic/WITNESS review for M05;
-- [ ] Bellingcat/source-tracing review for M06;
-- [ ] current optional tool validation.
+- [ ] expand to authored golden-module depth after M06 pilot lessons;
+- [ ] Mnemonic/WITNESS review;
+- [ ] independent practice fixtures;
+- [ ] human usability run.
 
 ## Mini-pilot v0.1
 
@@ -118,7 +162,7 @@ Protocol: `pilot/mini-pilot-v0.1.md`
 Sequence:
 
 1. L01 Territory Map;
-2. L03 Telegram Source Tracing;
+2. M06 learning path + L03 Telegram Source Tracing;
 3. L12 Wrong Attribution.
 
 The pilot tests three fundamental habits:
@@ -136,13 +180,15 @@ Primary pilot measurements:
 
 ## Наступне
 
-- [ ] Run mini-pilot v0.1 with 5–8 participants
+- [ ] Run independent human pilot of M06 + L03 first
+- [ ] Fix M06 using observed learner failures
+- [ ] Then run full mini-pilot v0.1 with 5–8 participants
 - [ ] Create `pilot/mini-pilot-v0.1-report.md`
 - [ ] Complete remaining Bradshaw audit: statistics + selected notebooks/exercises + licensing
 - [ ] Audit Berkeley imagery guide (2024)
 - [ ] Audit WITNESS / Mnemonic preservation and video guidance
-- [ ] Build M02/M03 around L01
-- [ ] Build M17/M18 around L12
+- [ ] Build M02/M03 around L01 to golden-module depth
+- [ ] Build M17/M18 around L12 to golden-module depth
 - [ ] Revise Blueprint after pilot evidence
 
 ## Поточна архітектура
@@ -152,6 +198,7 @@ Primary pilot measurements:
 - 20 core-модулів;
 - 5 модулів спеціалізації;
 - 16 запланованих лабораторних;
+- 1 content-complete golden-module candidate (M06);
 - 3 controlled labs assembled and internally testable;
 - 3 типи наскрізних кейсів;
 - окремий MVP/pilot curriculum;
@@ -173,4 +220,4 @@ Primary pilot measurements:
 
 Матеріал вважається частиною курсу лише після внесення до репозиторію із зазначенням джерел, статусу перевірки та версії.
 
-Лабораторна або модуль вважається `pilot-ready` лише після learning outcomes / task, практичного артефакту, rubric, instructor solution, limitations, перевірених технічних інструкцій та незалежного тестового проходження.
+Лабораторна або модуль вважається `pilot-ready` лише після substantive learning content/task, практичного артефакту, rubric/instructor solution where applicable, limitations, перевірених технічних інструкцій та незалежного тестового проходження.
