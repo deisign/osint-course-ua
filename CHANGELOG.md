@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-08-10 — methodology core + first working lab
+
+- додано `docs/02-competency-map.md`;
+- додано `docs/03-terminology.md`;
+- проведено core-аудит Berkeley Protocol і додано `research/donors/berkeley-protocol.md`;
+- оновлено source registry: Berkeley Protocol → `core-reviewed`; додано Berkeley imagery guide (2024) і Open-Source Practitioner’s Guide to the Murad Code (2025) у чергу;
+- додано `standards/osint-investigation-standard-v0.1.md`;
+- у стандарті формалізовано lifecycle `discovery → preliminary assessment → collection → preservation → verification → analysis → peer review → handoff/reporting`;
+- verification стандартизовано як `SOURCE + ITEM + CONTENT`;
+- додано attribution ladder і qualitative confidence scale;
+- створено core templates для planning, digital landscape, threat/harm assessment, hypotheses, digital object provenance, collection logging, verification і peer review;
+- Curriculum Blueprint оновлено до v0.2 з інтеграцією Berkeley;
+- створено controlled synthetic lab `L03 Telegram Source Tracing`;
+- L03 містить task, dataset, synthetic media, rubric, instructor solution і validation record;
+- машинні перевірки L03 пройдено: CSV/chronology/forward logic → OK; expected SHA-256 values → OK;
+- статус L03: `DRAFT / internally testable`, independent human run required before `pilot-ready`;
+- Bradshaw donor audit розширено до `PARTIAL-REVIEWED` після file-level review network analysis, Kumu data model, OpenRefine cleaning, Python/scraping, company accounts і storytelling;
+- network curriculum зафіксовано як entities + sourced relationships + observed/inferred + temporal validity + confidence, незалежно від конкретного graph UI.
+
 ## 2026-08-10 — curriculum architecture v0.1
 
 - додано `docs/01-graduate-profile.md`;
@@ -7,7 +26,7 @@
 - додано критичні компетентності та мінімальний стандарт випускної роботи;
 - додано `curriculum/blueprint.md`;
 - сформовано 20 core-модулів і 5 модулів спеціалізації;
-- закладено 16 лабораторних, 3 сквозні кейси, MVP/pilot curriculum і dependency map;
+- закладено 16 лабораторних, 3 наскрізні кейси, MVP/pilot curriculum і dependency map;
 - інтегровано початкові висновки з Paul Bradshaw / MED7369: systems thinking, territory mapping, competing hypotheses, network analysis, statistics + cognitive bias, text-as-data, data cleaning і project-driven learning;
 - зафіксовано Definition of Done для переходу модуля у статус `pilot-ready`.
 
