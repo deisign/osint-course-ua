@@ -4,20 +4,28 @@
 **Організаційний контекст:** Birmingham City University, MA in Data Journalism / journalism programmes  
 **Репозиторій:** `paulbradshaw/MED7369-Specialist-Investigative-Journalism`  
 **Перевірено:** 2026-08-10  
-**Статус аудиту:** `INITIAL` — первинний розбір README та заявленої структури; потрібен окремий file-by-file аудит матеріалів.  
+**Статус аудиту:** `PARTIAL-REVIEWED` — README + file-level review ключових network analysis, cleaning, Python/scraping, accounts та storytelling матеріалів; statistics/notebooks і частина exercises ще потребують окремого проходу.
+
+---
 
 ## 1. Чому це корисний donor
 
 MED7369 цінний не як готовий OSINT-курс, а як приклад навчання investigative journalism через системне мислення, формулювання гіпотез, картування джерел і зв’язків, роботу з даними, автоматизацію та самостійний проєкт.
 
-Для нашого курсу особливо важливий принцип: **спочатку зрозуміти систему та дослідницьке питання, потім обирати інструмент**. Це протилежність типовій побудові OSINT-курсів як каталогу сервісів.
+Для нашого курсу особливо важливий принцип:
+
+> **спочатку зрозуміти систему та дослідницьке питання, потім обирати інструмент.**
+
+Це протилежність типовій побудові OSINT-курсів як каталогу сервісів.
+
+---
 
 ## 2. Заявлена структура, релевантна нашому курсу
 
-За README репозиторію виділено такі блоки:
+За README репозиторію виділено:
 
 - systems thinking та `Mapping the territory`;
-- формування story / hypothesis та Story-Based Inquiry;
+- story / hypothesis та Story-Based Inquiry;
 - systems of accountability, documents, data, FOI;
 - company accounts / following the money;
 - network analysis та OSINT;
@@ -29,162 +37,412 @@ MED7369 цінний не як готовий OSINT-курс, а як прикл
 - project-driven learning та production weeks;
 - longform / investigative storytelling.
 
-## 3. Рішення щодо компонентів
+---
 
-| Компонент MED7369 | Цінність для нас | Рішення | Цільовий контур |
-|---|---|---|---|
-| Systems thinking | Вчить досліджувати систему, а не окремий факт | `ADOPT` | Foundations / Planning |
-| Mapping the territory | Карта акторів, інституцій, документів, джерел і точок контролю | `ADAPT` | Research planning |
-| Story-Based Inquiry / hypothesis | Формує перевірювану гіпотезу й напрям збору | `ADAPT` | Research question + competing hypotheses |
-| Systems of accountability | Корисна логіка пошуку інституційних джерел | `EXPAND` | Registers / official sources / accountability systems |
-| Company accounts | Один із типів документальних слідів | `ADAPT` | Organisations / money / documents |
-| Network analysis | Структурування зв’язків між людьми, організаціями, місцями | `EXPAND` | Entity resolution + link analysis |
-| APIs | Масштабований збір даних | `REBUILD` | Automation / reproducible collection |
-| Scraping | Масштабований збір і моніторинг | `REBUILD` | Automation / monitoring |
-| Statistics | Захист від неправильних висновків із чисел | `EXPAND` | Analytical discipline |
-| Cognitive bias | Критично важливо для атрибуції та перевірки альтернатив | `EXPAND` | Analytical discipline / peer review |
-| Text as data / regex | Пошук закономірностей у великих масивах тексту | `EXPAND` | Large-scale OSINT / documents / Telegram corpora |
-| Data cleaning | Нормалізація, дедуплікація, контроль якості | `ADOPT + EXPAND` | Data hygiene |
-| Production/project weeks | Практика на власному дослідженні | `ADOPT` | Labs / capstone |
-| Storytelling | Корисно для публічної версії | `ADAPT` | Reporting, але після evidence package |
+# 3. File-level review
 
-## 4. Що це змінює в нашому Curriculum Blueprint
+## 3.1. `networkanalysis/readme.md`
 
-### 4.1. Додати systems thinking раніше
+Bradshaw визначає network analysis як інструмент **двох різних етапів**:
 
-До роботи з пошуком та інструментами студент має навчитися описувати досліджувану систему:
+1. planning investigation — mapping networks and identifying actors;
+2. storytelling — showing patterns / allowing audience exploration.
 
-- актори;
-- інституції;
-- формальні й неформальні відносини;
-- документи;
-- реєстри;
-- механізми підзвітності;
-- можливі точки появи цифрового сліду.
+Це важливе розділення для нашого curriculum.
 
-### 4.2. Посилити hypothesis-driven investigation
+### Рішення
 
-Потрібно чітко розрізняти:
+`ADOPT + EXPAND`.
 
-- research question;
-- working hypothesis;
-- competing hypotheses;
-- collection requirement;
-- evidence supporting / contradicting hypothesis;
-- conclusion and confidence.
+У нашому M15 network graph спочатку є **аналітичним об’єктом з provenance**, а лише потім може стати public visualisation.
 
-Story-Based Inquiry можна використовувати як педагогічну основу, але висновок у нашому курсі має бути evidence-first і не підлаштовуватися під майбутню історію.
+Не оцінюємо студента за красою графа.
 
-### 4.3. Виділити окремий блок Statistics + Cognitive Bias
+---
 
-У початковому плані ця тема була недостатньо виражена. Мінімально потрібні:
+## 3.2. `networkanalysis/kumuexercise.md`
 
-- denominator / base-rate problems;
-- selection bias;
-- survivorship bias;
-- confirmation bias;
-- availability bias;
-- correlation vs causation;
-- Simpson’s paradox;
-- uncertainty and sampling;
-- misleading aggregation;
-- оцінка якості та повноти набору даних.
+Найцінніша частина вправи — не Kumu UI, а **data model** з двох таблиць:
 
-Цей блок має бути пов’язаний з атрибуцією: студент повинен активно шукати дані, які можуть спростувати його власну версію.
+### Entities / nodes
 
-### 4.4. Автоматизація має бути частиною професійної практики
+Типові поля:
 
-APIs, scraping, regex та text-as-data не слід викладати як «курс Python усередині OSINT». Навчальна мета:
+- name / label;
+- type;
+- description / URL / address;
+- tags;
+- інші attributes.
 
-> дослідник розуміє, коли ручний пошук перестає масштабуватися, здатний сформулювати задачу автоматизованого збору, перевірити якість результату та забезпечити його відтворюваність.
+### Relationships / connections
 
-### 4.5. Data cleaning — не технічна дрібниця
+Типові поля:
 
-Нормалізація імен, дат, телефонів, unit names, географічних назв, URL, username та інших ідентифікаторів прямо впливає на якість entity resolution і мережевого аналізу.
+- from;
+- to;
+- direction;
+- relationship type;
+- quantitative dimension;
+- description;
+- tags.
 
-Для українсько-російського контуру слід додати:
+Bradshaw також показує, що одна й та сама структура може бути використана в Kumu, JSON/R, NodeXL, Gephi, Neo4j тощо.
 
-- українська / російська орфографія;
-- транслітерації;
-- варіанти ПІБ;
-- `ё/е`;
-- зміни назв населених пунктів;
-- старі / нові назви військових частин та формувань;
-- дублікати публікацій і репости.
+### Curriculum decision
 
-## 5. Чого не переносимо як є
+**Беремо data model, не UI.**
 
-### 5.1. Journalism-first фінал
+Наш мінімальний `edges` schema має бути суворішим:
 
-У журналістському курсі логічним кінцевим продуктом є story / feature / investigation для аудиторії.
+```text
+edge_id
+from_entity
+from_entity_id
+to_entity
+to_entity_id
+relationship_type
+direction
+observed_or_inferred
+source_object_id
+valid_from
+valid_to
+quantitative_value
+confidence
+notes
+```
 
-У нашій архітектурі між дослідженням і публікацією обов’язково існує шар:
+Додаємо те, чого журналістському visualisation exercise не вистачає для evidence-first роботи:
 
-`provenance → preservation → verification → analysis → confidence → peer review → evidence package`.
-
-Лише після цього формується публічний продукт.
-
-### 5.2. Конкретні технічні інструкції без повторної перевірки
-
-API, scraping, OpenRefine, Python/R, зовнішні сервіси та посилання мають бути перевірені на актуальність станом на дату створення відповідної лабораторної.
-
-Зберігаємо навчальну мету; інструкції та інструментарій перебудовуємо для поточної версії курсу.
-
-### 5.3. Вузько британська інституційна специфіка
-
-FOI, company accounts та systems of accountability мають бути трансформовані у ширший модуль про інституційні джерела, а український і російський контури — розроблені окремо.
-
-## 6. Потенційні лабораторні, що випливають із MED7369
-
-### Territory map
-
-Студент отримує тему, наприклад російську військову частину або регіональну мобілізаційну систему, та створює карту:
-
-- акторів;
-- офіційних систем;
-- потенційних джерел;
-- зв’язків;
-- цифрових слідів;
-- прогалин у даних.
-
-### Competing hypotheses
-
-За одним набором фактів студент створює не одну «версію», а мінімум три альтернативні пояснення та collection plan для їх перевірки.
-
-### Dirty entities
-
-Набір записів з різними варіантами ПІБ, назв підрозділів, дат і URL потрібно нормалізувати, не об’єднавши різних людей помилково.
-
-### Text as data
-
-На масиві повідомлень або документів студент повинен сформувати відтворюваний спосіб пошуку заданих сутностей / патернів і перевірити false positives.
-
-### Network analysis
-
-Студент будує граф зв’язків, але окремо позначає:
-
-- observed edge;
-- inferred edge;
 - source;
 - temporal validity;
-- confidence.
+- observed vs inferred;
+- confidence;
+- stable entity IDs.
 
-## 7. Питання для повного аудиту репозиторію
+### Tool policy
 
-- Які саме вправи містяться в `networkanalysis/`?
-- Наскільки придатні їхні форми планування розслідування?
-- Які notebook-и / scripts містяться в `python/`?
-- Чи є вправи, де метод важливіший за конкретний API?
-- Які статистичні вправи можна відтворити на наших українсько-російських даних?
-- Як викладено cognitive bias: як окрему тему чи у зв’язці зі статистикою?
-- Що конкретно є в матеріалах cleaning / OpenRefine?
-- Які принципи з `storytelling.md` придатні для перетворення доказового пакета на публічний звіт?
-- Які ліцензійні умови репозиторію та вкладених матеріалів?
+Kumu / Gephi / NodeXL / Neo4j / Flourish — лише replaceable implementations.
 
-## 8. Попередній висновок
+Студент повинен розуміти network data незалежно від конкретного інтерфейсу.
 
-**Рівень корисності:** високий як педагогічний donor.  
-**Рівень готовності до прямого використання:** низький — курс має журналістську мету і містить інструментальні частини, що потребують повторної актуалізації.  
-**Найбільший внесок у наш curriculum:** systems thinking, territory mapping, hypothesis-driven inquiry, network analysis, statistics + cognitive bias, text-as-data, data cleaning та project-driven learning.
+---
 
-Наступний статус після повного перегляду файлів: `REVIEWED`.
+## 3.3. `cleaning/readme.md`
+
+Це один із найкорисніших file-level donors.
+
+Bradshaw послідовно розбирає:
+
+- whitespace / capitalisation / formatting;
+- XML/JSON import;
+- clustering similar values;
+- multiple clustering algorithms;
+- combining files/sheets;
+- malformed/multi-row headings;
+- blank rows;
+- faceting;
+- separating mixed semantic types inside one column;
+- fill-down / reshaping;
+- regex / converted-PDF cleanup.
+
+### Особливо важлива методична деталь
+
+У clustering вправі студенту прямо пропонується **не зливати всі схожі значення автоматично**: наприклад, два схожих restaurant/business names можуть бути різними businesses.
+
+Це майже готовий педагогічний міст до нашого:
+
+- false merge;
+- false split;
+- entity resolution;
+- manual review of automated suggestions.
+
+### Curriculum decision
+
+`ADOPT METHOD + EXPAND AUDIT TRAIL`.
+
+Нам потрібна L08 `Dirty Entities`, де студент:
+
+1. отримує raw records;
+2. робить normalization proposals;
+3. позначає automated suggestions;
+4. приймає / відхиляє merge;
+5. документує rule;
+6. зберігає raw values;
+7. перевіряє false merge/split risk.
+
+OpenRefine MAY бути одним із інструментів, але laboratory MUST бути solvable іншим current tool / code path.
+
+---
+
+## 3.4. `python/readme.md` + scraper notebook inventory
+
+Python layer містить:
+
+- basic programming concepts;
+- Google Colab/Jupyter workflow;
+- simple one-page scraping;
+- list extraction;
+- multiple-item extraction;
+- pagination / next-page scraping;
+- APIs;
+- historical Morph.io / ScraperWiki-era materials;
+- separate discussion of scraping law.
+
+### Що беремо
+
+Педагогічну прогресію:
+
+```text
+one request
+→ one item
+→ list of items
+→ multiple fields
+→ pagination
+→ structured output
+→ validation
+```
+
+Вона дуже придатна для M16.
+
+### Що перебудовуємо
+
+`REBUILD` technical implementation.
+
+Причини:
+
+- частина notebook/tool ecosystem історична;
+- Morph.io / ScraperWiki-specific workflow не повинен ставати curriculum dependency;
+- сучасний course pipeline має логувати parameters, coverage, errors і validation sample;
+- студенту не обов’язково ставати Python developer.
+
+### Наша learning outcome
+
+> Дослідник здатний зрозуміти, коли ручний collection не масштабується, сформулювати автоматизовану процедуру, запустити/адаптувати простий pipeline і перевірити його результат на coverage та errors.
+
+---
+
+## 3.5. `accounts/readme.md`
+
+Company accounts block значно ширший за «читання балансу». Він показує accounts/records як частину **institutional source ecosystem**:
+
+- company growth/decline;
+- conflicts of interest;
+- related-party relationships;
+- money transfers;
+- directors/shareholders;
+- expenditure;
+- financial narrative over time;
+- declarations of interest;
+- APIs/data-format versions of institutional records;
+- cross-checking public claims against records.
+
+### Curriculum decision
+
+Не робити окремий великий UK company-accounts module у core.
+
+`ADAPT` до M13:
+
+> **Institutional records & systems of accountability**.
+
+Для українського/російського specialization потрібні свої класи реєстрів, а не переклад Companies House exercise.
+
+### Потенційний advanced elective
+
+`Follow the money / corporate OSINT` може пізніше стати окремою спеціалізацією.
+
+---
+
+## 3.6. `storytelling.md`
+
+Матеріал детально розбирає narrative structures, plots, human entry points, climax/right of reply, resolution/coda та longform construction.
+
+### Корисне для нас
+
+- investigation може мати різні narrative forms;
+- story structure допомагає audience comprehension;
+- right of reply / confrontation with responsible actors важливі для journalistic output;
+- human case study може пояснювати системну проблему;
+- ending має показувати what happens next.
+
+### Ризик для evidence-first OSINT
+
+Narrative structure може створювати **pressure to force evidence into a satisfying plot**.
+
+Тому storytelling MUST з’являтися **після**:
+
+```text
+provenance
+→ verification
+→ analysis
+→ confidence
+→ peer review
+```
+
+### Curriculum decision
+
+`ADAPT` лише в M20.
+
+Вводимо rule:
+
+> Story structure may organise presentation, but MUST NOT organise factual inclusion/exclusion in the evidence package.
+
+Public narrative і internal evidence package — різні продукти.
+
+---
+
+# 4. Що це вже змінило в нашому Curriculum Blueprint
+
+## 4.1. Systems thinking moved before tools
+
+До пошуку студент описує:
+
+- actors;
+- institutions;
+- records;
+- accountability systems;
+- source ecosystems;
+- digital traces;
+- gaps.
+
+Це інтегровано в M02.
+
+## 4.2. Network analysis separated into data model and visualisation
+
+В M15 student learns:
+
+1. entities;
+2. relationships;
+3. source-backed edges;
+4. temporal validity;
+5. observed vs inferred;
+6. confidence;
+7. only then visualisation.
+
+## 4.3. Data cleaning upgraded to evidence discipline
+
+M14 тепер має raw/processed separation, transformation log та entity-resolution controls.
+
+## 4.4. Automation is professional scaling, not “Python class”
+
+M16 побудовано навколо reproducible collection/extraction + validation, а не syntax mastery.
+
+## 4.5. Statistics + cognitive bias remain a separate analytical block
+
+Повний statistics file-level review ще попереду, але README already justifies dedicated M17.
+
+## 4.6. Storytelling explicitly comes after evidence package
+
+Bradshaw storytelling is retained as communication method, not investigative truth engine.
+
+---
+
+# 5. Рішення щодо компонентів
+
+| Component | Decision | Curriculum |
+|---|---|---|
+| Systems thinking | `ADOPT` | M02 |
+| Territory mapping | `ADAPT` | M02 |
+| Story/hypothesis inquiry | `ADAPT` | M03 + M18 |
+| Systems of accountability | `EXPAND` | M13 + U01 |
+| Company accounts | `ADAPT` | M13 / future elective |
+| Network data model | `ADOPT + EXPAND` | M15 |
+| Kumu/Gephi/NodeXL/Neo4j UI | `OPTIONAL IMPLEMENTATION` | M15 |
+| APIs | `REBUILD` | M16 |
+| Scraping | `REBUILD` | M16 |
+| Python fundamentals | `MINIMAL / JUST-IN-TIME` | M16 |
+| Statistics | `EXPAND` | M17 |
+| Cognitive bias | `EXPAND` | M17–M19 |
+| Text as data / regex | `EXPAND` | M16 |
+| Data cleaning concepts | `ADOPT + EXPAND` | M14 |
+| OpenRefine UI | `OPTIONAL IMPLEMENTATION` | M14 |
+| Production/project weeks | `ADOPT` | pilot + capstone |
+| Storytelling | `ADAPT AFTER EVIDENCE` | M20 |
+
+---
+
+# 6. Labs derived from Bradshaw donor
+
+## L01 — Territory Map
+
+System / source ecosystem / gaps / collection requirements.
+
+## L08 — Dirty Entities
+
+Raw values → clustering suggestions → manual merge decisions → audit log → false merge/split analysis.
+
+## L09 — Sourced Network
+
+Two-table model:
+
+- entities;
+- relationships.
+
+But every relationship MUST carry source, observed/inferred status and temporal validity.
+
+## L10 — Text as Data
+
+Reproducible extraction + false-positive validation.
+
+## L11 — Numbers Can Lie
+
+Dataset/claim critique with denominator, aggregation and selection problems.
+
+---
+
+# 7. Technical freshness assessment
+
+## Stable concepts
+
+High confidence these remain pedagogically useful:
+
+- entities/relationships data model;
+- systems thinking;
+- source/accountability mapping;
+- cleaning/normalisation;
+- clustering as suggestion rather than truth;
+- faceting/grouping;
+- scraping progression;
+- notebook-as-reproducible-work habit;
+- narrative after reporting evidence.
+
+## Time-sensitive implementation
+
+Must be revalidated before use:
+
+- Kumu UI;
+- NodeXL;
+- Gephi version-specific steps;
+- Neo4j/Panama Papers setup;
+- Flourish;
+- OpenRefine UI/menu details;
+- Colab/Jupyter setup;
+- Morph.io / ScraperWiki historical workflows;
+- API endpoints;
+- UK registry links;
+- external tutorials.
+
+---
+
+# 8. Remaining review work
+
+Потрібно ще окремо пройти:
+
+- statistics folder/files;
+- selected Python notebooks at code level;
+- `python/scrapinglaw.md` only as historical/legal donor, not current Ukrainian guidance;
+- selected network exercises (`taxpayersalliance`, Neo4j etc.) for lab design;
+- `accounts/keypoints.md`;
+- licence status of repository and embedded/external materials;
+- exercises/data licensing.
+
+Після цього статус можна підняти до `REVIEWED`.
+
+---
+
+# 9. Поточний висновок
+
+**Рівень корисності:** високий як pedagogical donor.  
+**Пряме використання матеріалів:** обмежене.  
+**Методи, які вже інтегровані:** systems thinking, territory mapping, hypothesis inquiry, two-table network model, data cleaning/entity-resolution caution, automation progression, statistics/bias layer, project-driven learning, storytelling-after-evidence.
+
+Bradshaw дає нам **педагогічний скелет журналістського розслідування**. Berkeley Protocol дає **процесуальну дисципліну digital open source investigation**. Наш курс має залишатися їх синтезом, а не копією будь-якого з них.
