@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="120 60 720 420">
+  <rect width="960" height="540" fill="#151515"/>
+  <rect y="330" width="960" height="210" fill="#242424"/>
+  <path d="M0 390 L960 300" stroke="#8c8c8c" stroke-width="42"/>
+  <path d="M0 390 L960 300" stroke="#d7d7d7" stroke-width="3" stroke-dasharray="26 24"/>
+  <rect x="610" y="235" width="190" height="85" fill="#555"/>
+  <rect x="636" y="255" width="38" height="26" fill="#bbb"/>
+  <rect x="704" y="255" width="38" height="26" fill="#bbb"/>
+  <circle cx="420" cy="308" r="48" fill="#f0f0f0" opacity="0.85"/>
+  <circle cx="420" cy="308" r="82" fill="none" stroke="#a0a0a0" stroke-width="13" opacity="0.45"/>
+  <path d="M430 260 C470 210 500 175 510 125" stroke="#d2d2d2" stroke-width="23" fill="none" opacity="0.55"/>
+  <rect x="120" y="60" width="720" height="420" fill="none" stroke="#e6e6e6" stroke-width="4"/>
+  <text x="145" y="96" fill="#eee" font-family="sans-serif" font-size="20">DERIVED CROP — SYNTHETIC L03</text>
+</svg>
