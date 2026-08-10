@@ -1,5 +1,5 @@
-record_id,platform,publisher,time,forwarded_from,text,media_id,notes
-A,Telegram,@north_watch,2026-06-03T08:12:00+03:00,,"Колона рухається через міст. Відео від підписника.",V1,"No explicit upstream identity; publisher says subscriber-supplied."
-B,Telegram,@regional_now,2026-06-03T08:19:00+03:00,,"Колона рухається через міст. Відео від підписника.",V1,"Identical wording; no forward marker."
-C,Telegram,@city_feed,2026-06-03T08:24:00+03:00,@regional_now,"Колона рухається через міст. Відео від підписника.",V1,"Explicit forwarded-from @regional_now."
-D,Web,example.local/story/55,2026-06-03T08:38:00+03:00,@city_feed,"Місцеві канали повідомляють про рух колони через міст.",V1,"Article links to C and embeds its post."
+record_id,platform,publisher,publication_time,archive_capture_time,time_basis,forwarded_from,text,media_id,notes
+A,Telegram,@north_watch,2026-06-03T08:12:00+03:00,,platform timestamp,,"Колона рухається через міст. Відео від підписника.",V1,"No explicit upstream identity; publisher says subscriber-supplied."
+B,Telegram,@regional_now,2026-06-03T08:19:00+03:00,,platform timestamp,,"Колона рухається через міст. Відео від підписника.",V1,"Identical wording; no forward marker."
+C,Telegram,@city_feed,2026-06-03T08:24:00+03:00,,platform timestamp,@regional_now,"Колона рухається через міст. Відео від підписника.",V1,"Explicit forwarded-from @regional_now."
+D,Web,example.local/story/55,2026-06-03T08:38:00+03:00,,page timestamp,@city_feed,"Місцеві канали повідомляють про рух колони через міст.",V1,"Article links to C and embeds its post."
