@@ -1,5 +1,5 @@
-version: 3
-updated: 2026-08-10
+version: 4
+updated: 2026-08-12
 sources:
   - id: bradshaw-med7369
     type: course-repository
@@ -40,6 +40,38 @@ sources:
       - project-based-learning
       - storytelling
     donor_file: "research/donors/paulbradshaw-MED7369.md"
+
+  - id: art-of-data-journalism
+    type: course-repository
+    author: Matt Waite
+    title: "The Art of Data Journalism Tutorials"
+    repository: "The-Art-of-Data-Journalism/DataJournalismTutorials"
+    url: "https://github.com/The-Art-of-Data-Journalism/DataJournalismTutorials"
+    site: "https://the-art-of-data-journalism.github.io/"
+    checked: 2026-08-12
+    license: GPL-3.0
+    audit_status: partial-reviewed
+    reviewed_files:
+      - README.md
+      - DESCRIPTION
+      - LICENSE
+      - inst/tutorials/08-datacleaning1/08-datacleaning1.Rmd
+      - inst/tutorials/09-datacleaning2/09-datacleaning2.Rmd
+      - inst/tutorials/10-datacleaning3/10-datacleaning3.Rmd
+      - inst/tutorials/11-joins/11-joins.Rmd
+      - inst/tutorials/13-census/13-census.Rmd
+    roles:
+      - learning-design
+      - data-smells
+      - data-cleaning
+      - data-validation
+      - progressive-practice
+      - automated-formative-feedback
+      - localized-datasets
+      - joins
+      - apis
+      - reproducible-code
+    donor_file: "research/donors/the-art-of-data-journalism.md"
 
   - id: berkeley-protocol
     type: standard
