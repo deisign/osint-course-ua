@@ -1,5 +1,5 @@
-version: 4
-updated: 2026-08-12
+version: 5
+updated: 2026-08-18
 sources:
   - id: bradshaw-med7369
     type: course-repository
@@ -72,6 +72,35 @@ sources:
       - apis
       - reproducible-code
     donor_file: "research/donors/the-art-of-data-journalism.md"
+
+  - id: claude-osint-elementalsouls
+    type: agent-skill-repository
+    author: Sachin Sharma
+    title: "Claude-OSINT"
+    repository: "elementalsouls/Claude-OSINT"
+    url: "https://github.com/elementalsouls/Claude-OSINT"
+    checked: 2026-08-18
+    license: MIT-code-content-separate
+    audit_status: partial-reviewed
+    reviewed_files:
+      - README.md
+      - docs/architecture.md
+      - skills/osint-methodology/SKILL.md
+      - skills/org-attack-surface/SKILL.md
+      - skills/continuous-exposure-monitoring/SKILL.md
+      - tests/smoke-test-prompts.md
+    roles:
+      - typed-asset-graph
+      - attribution-discipline
+      - confidence-upgrade-workflows
+      - source-connector-resilience
+      - structured-findings
+      - continuous-monitoring
+      - diff-and-lifecycle
+      - ai-agent-architecture
+      - ai-regression-testing
+      - human-promotion-gates
+    donor_file: "research/donors/claude-osint-elementalsouls.md"
 
   - id: berkeley-protocol
     type: standard
