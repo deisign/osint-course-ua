@@ -3,7 +3,7 @@
 **Repository:** `elementalsouls/Claude-OSINT`  
 **Checked:** 2026-08-18  
 **Audit status:** `PARTIAL-REVIEWED`  
-**License:** MIT for code; repository also ships a separate `LICENSE-CONTENT`, so content reuse must be checked separately before copying text.
+**License:** code — MIT; textual/content material — CC BY 4.0 (`LICENSE-CONTENT`). Adaptation is possible with attribution.
 
 ## Executive decision
 
