@@ -80,7 +80,7 @@ sources:
     repository: "elementalsouls/Claude-OSINT"
     url: "https://github.com/elementalsouls/Claude-OSINT"
     checked: 2026-08-18
-    license: MIT-code-content-separate
+    license: "code: MIT; content: CC-BY-4.0"
     audit_status: partial-reviewed
     reviewed_files:
       - README.md
